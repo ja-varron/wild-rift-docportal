@@ -139,24 +139,5 @@ New User
 |------|------------|--------|
 | 5B | Password does not meet criteria | Display password strength requirement |
 
----
 
-## 11. Security Considerations
-
-- Password must never be stored in plain text.
-- Use bcrypt hashing.
-- Input validation to prevent SQL injection.
-- CAPTCHA optional to prevent bot registration.
-- Rate limit registration attempts.
-
----
-
-## 12. Non-Functional Requirements
-
-| Category | Requirement |
-|----------|-------------|
-| Performance | Registration must complete within 2 seconds |
-| Security | Encrypted password storage |
-| Reliability | Database transaction must not fail silently |
-| Usability | Clear validation messages |
 
