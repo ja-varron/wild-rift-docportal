@@ -1,21 +1,22 @@
-# Authentication – Sign In
+# Authentication – Sign Up
 
-Project Homepage > Authentication > Sign In
+Breadcrumb:
+Project Homepage > Authentication > Sign Up
 
 ---
 
 ## 1. Module Overview
 
-The Sign In module allows registered users to securely access the Tuon system using their email and password credentials.
+The Sign Up module allows new users to create an account in the system.
 
 This module ensures:
-- Secure authentication of users
-- Role-based access control
-- Protection of system data
-- Encrypted password validation
-- Session management using secure tokens
+- Secure registration of users
+- Proper role assignment
+- Data validation and sanitization
+- Encrypted password storage
+- Prevention of duplicate accounts
 
-Only users with valid accounts (Administrator, Instructor, or Student) can log in.
+Only authorized roles (Administrator, Instructor, Student) can be registered depending on system configuration.
 
 ---
 
@@ -29,116 +30,124 @@ Only users with valid accounts (Administrator, Instructor, or Student) can log i
 
 ## 3. Pre-Conditions
 
-- User must already have a registered account.
-- User account must be active.
-- User must access the system via HTTPS connection.
+- User must not already have a registered account.
+- Email address must be unique.
+- Required registration fields must be completed.
 
 ---
 
 ## 4. Post-Conditions
 
-- Successful authentication generates a secure session.
-- User is redirected to their respective dashboard.
-- Login attempt is recorded in the system logs.
+- New user account is stored in the database.
+- Password is securely hashed.
+- User account is created as active (or pending approval if required).
+- Confirmation message is displayed.
 
 ---
 
 ## 5. Inputs
 
-| Field Name | Type | Required | Description |
-|------------|------|----------|-------------|
-| Email | Text | Yes | Registered email address |
-| Password | Password | Yes | User’s encrypted password |
+| Field Name   | Type     | Required | Description |
+|--------------|----------|----------|-------------|
+| Full Name    | Text     | Yes      | User's complete name |
+| Email        | Email    | Yes      | Unique email address |
+| Password     | Password | Yes      | User password |
+| Confirm Password | Password | Yes | Must match password |
+| Role         | Dropdown | Yes      | Admin / Instructor / Student |
 
 ---
 
 ## 6. Outputs
 
 ### Success Response
-- Redirect to dashboard
-- Session token generated
-- Role-based interface loaded
+- "Account successfully created"
+- Redirect to Sign In page
+- Optional: Email verification sent
 
 ### Error Response
-- "Invalid email or password"
-- "Account not found"
-- "Account is disabled"
+- "Email already exists"
+- "Passwords do not match"
+- "Invalid input format"
 
 ---
 
 ## 7. Validation Rules
 
-1. Email must follow proper email format.
-2. Email must exist in the database.
-3. Password must match encrypted password stored in database.
-4. Account must be marked as active.
-5. Maximum 5 failed login attempts before temporary lock.
+1. Email must follow valid email format.
+2. Email must be unique in database.
+3. Password must:
+   - Be at least 8 characters
+   - Contain uppercase and lowercase letters
+   - Contain at least one number
+4. Confirm Password must match Password.
+5. Role must be selected.
 
 ---
 
 ## 8. Business Rules
 
-- Passwords are stored using hashing algorithm (e.g., bcrypt).
-- System must use HTTPS encryption.
-- Session expires after 2 hours of inactivity.
-- Only authenticated users can access protected modules.
+- Password must be hashed using bcrypt before storage.
+- Default account status is active or pending (based on system policy).
+- Duplicate email registration is not allowed.
+- Admin accounts may require higher privilege approval.
 
 ---
 
 ## 9. Main Use Case Scenario
 
 ### Primary Actor:
-Registered User (Admin / Instructor / Student)
+New User
 
 ### Main Flow:
 
 | Step | System/User Action |
 |------|--------------------|
-| 1 | User navigates to Sign In page |
-| 2 | User enters email and password |
-| 3 | User clicks "Login" button |
-| 4 | System validates input format |
-| 5 | System verifies credentials in database |
-| 6 | System generates secure session token |
-| 7 | System redirects user to dashboard |
+| 1 | User navigates to Sign Up page |
+| 2 | User enters required details |
+| 3 | User selects role |
+| 4 | User clicks "Register" button |
+| 5 | System validates inputs |
+| 6 | System checks for duplicate email |
+| 7 | System hashes password |
+| 8 | System saves user to database |
+| 9 | System displays success message |
+| 10 | User is redirected to Sign In page |
 
 ---
 
 ## 10. Alternative Flows
 
-### A1 – Invalid Credentials
+### A1 – Email Already Exists
 
 | Step | Condition | Action |
 |------|------------|--------|
-| 5A | Email not found | Display "Invalid email or password" |
-| 5B | Password incorrect | Display "Invalid email or password" |
+| 6A | Email found in database | Display "Email already exists" |
 
 ---
 
-### A2 – Account Disabled
+### A2 – Password Mismatch
 
 | Step | Condition | Action |
 |------|------------|--------|
-| 5C | Account inactive | Display "Account is disabled. Contact administrator." |
+| 5A | Password ≠ Confirm Password | Display "Passwords do not match" |
 
 ---
 
-### A3 – Too Many Failed Attempts
+### A3 – Weak Password
 
 | Step | Condition | Action |
 |------|------------|--------|
-| 5D | 5 failed attempts | Lock account temporarily for 15 minutes |
+| 5B | Password does not meet criteria | Display password strength requirement |
 
 ---
 
 ## 11. Security Considerations
 
-- Passwords must never be stored in plain text.
-- Use hashing algorithm (bcrypt).
-- JWT token or secure session ID must be generated.
-- Session timeout after inactivity.
-- Prevent SQL injection using parameterized queries.
-- Implement brute-force protection.
+- Password must never be stored in plain text.
+- Use bcrypt hashing.
+- Input validation to prevent SQL injection.
+- CAPTCHA optional to prevent bot registration.
+- Rate limit registration attempts.
 
 ---
 
@@ -146,16 +155,8 @@ Registered User (Admin / Instructor / Student)
 
 | Category | Requirement |
 |----------|-------------|
-| Performance | Login response time must be under 2 seconds |
-| Security | Must comply with data privacy standards |
-| Reliability | 99% system availability |
-| Usability | Clear error messages displayed |
+| Performance | Registration must complete within 2 seconds |
+| Security | Encrypted password storage |
+| Reliability | Database transaction must not fail silently |
+| Usability | Clear validation messages |
 
----
-
-## 13. Related Modules
-
-- Authentication – Sign Up
-- Authentication – Forgot Password
-- Dashboard Module
-- Role-Based Access Control
