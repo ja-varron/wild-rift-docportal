@@ -86,29 +86,7 @@ Only authorized roles (Administrator, Instructor, Student) can be registered dep
 
 ---
 
-## 7. Validation Rules
-
-1. Email must follow valid email format.
-2. Email must be unique in database.
-3. Password must:
-   - Be at least 8 characters
-   - Contain uppercase and lowercase letters
-   - Contain at least one number
-4. Confirm Password must match Password.
-5. Role must be selected.
-
----
-
-## 8. Business Rules
-
-- Password must be hashed using bcrypt before storage.
-- Default account status is active or pending (based on system policy).
-- Duplicate email registration is not allowed.
-- Admin accounts may require higher privilege approval.
-
----
-
-## 9. Main Use Case Scenario
+## 7. Main Use Case Scenario
 
 ### Primary Actor:
 New User
@@ -130,7 +108,7 @@ New User
 
 ---
 
-## 10. Alternative Flows
+## 9. Alternative Flows
 
 ### A1 – Email Already Exists
 
@@ -153,6 +131,5 @@ New User
 | Step | Condition | Action |
 |------|------------|--------|
 | 5B | Password does not meet criteria | Display password strength requirement |
-
 
 
