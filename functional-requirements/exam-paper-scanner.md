@@ -2,8 +2,11 @@
 
 **Target:** WR.010.001
 
+## Exam Paper Scanner
+
 ---
 
+### 📑 Site Map
 - [ ] [Project Homepage](project-homepage.md)
 - [ ] [Authentication](authentication.md)
 - [ ] [Exam Paper Scanner](exam-paper-scanner.md)
@@ -14,9 +17,7 @@
 
 ---
 
-## 📋 Functional Requirements
-
-#### Exam Paper Scanner
+### 📋 Functional Requirements
 
 - [ ] The instructor shall use a **mobile-compatible scanner interface**.
 - [ ] The system shall allow scanning of exam papers using **existing image recognition technology**.
@@ -24,11 +25,7 @@
 - [ ] The scanned images shall be securely uploaded for processing.
 - [ ] The system shall support multiple paper formats and layouts.
 
-</details>
-
-## 🧩 Use Case Scenario
-
-
+### 🧩 Use Case Scenario
 
 **Actor:** Instructor  
 **Precondition:** Instructor has access to a mobile device with the scanner interface.
@@ -44,11 +41,9 @@
 
 **Postcondition:** Exam paper is successfully scanned and uploaded for further processing.
 
-
-
 ---
 
-## 🛠️ Quick Actions
+### 🛠️ Quick Actions
 
 - [ ] Start Scanning
 - [ ] Review Scanned Papers

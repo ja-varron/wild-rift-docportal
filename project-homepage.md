@@ -1,17 +1,14 @@
-# Wild Rift Project Homepage
+# Wild Rift
 
 **Target:** WR.010.001
 
 | Revision Date | Document Revision | Description | Tracking Notes | Approved by |
 | ------------- | ---------------- | ----------- | -------------- | ----------- |
-| _(fill as needed)_ | _(fill as needed)_ | _(fill as needed)_ | _(fill as needed)_ | _(fill as needed)_ |
+| 02-13-2026 | _(fill as needed)_ | _(fill as needed)_ | _(fill as needed)_ | _(fill as needed)_ |
 
 ---
 
-## 📑 Site Map
-
-<details>
-  <summary>Navigation</summary>
+### 📑 Site Map
 
 - [ ] [Project Homepage](project-homepage.md)
 - [ ] [Authentication](authentication.md)
@@ -21,11 +18,9 @@
 - [ ] [Feedback Management](feedback-provider.md)
 - [ ] [Notification Alert](notification.md)
 
-</details>
-
 ---
 
-## 📝 Quick Actions
+### 📝 Quick Actions
 
 - [ ] Sign In
 - [ ] Sign Up
@@ -37,7 +32,7 @@
 
 ---
 
-## ℹ️ About
+### ℹ️ About
 
 Welcome to the Wild Rift DocPortal!  
 Use the navigation above to explore features and manage your exam-related tasks.
