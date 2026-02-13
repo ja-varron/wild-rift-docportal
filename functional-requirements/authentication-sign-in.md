@@ -75,17 +75,4 @@ User must already have a registered account.
 | 4 | System validates credentials |
 | 5 | System redirects to dashboard |
 
-### Alternative Flow:
 
-| Step | Condition | Action |
-|------|------------|--------|
-| 3A | Invalid credentials | System displays error message |
-| 3B | Account disabled | System blocks access |
-
----
-
-## Security Considerations
-
-- Passwords stored using hashing (bcrypt).
-- HTTPS encryption required.
-- Session token generated upon successful login.
