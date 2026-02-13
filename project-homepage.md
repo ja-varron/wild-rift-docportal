@@ -11,12 +11,12 @@
 ### 📑 Site Map
 
 - [ ] [Project Homepage](project-homepage.md)
-- [ ] [Authentication](authentication.md)
-- [ ] [Exam Paper Scanner](exam-paper-scanner.md)
-- [ ] [Result Processing](result-processor.md)
-- [ ] [Exam Analytics](exam-analytics.md)
-- [ ] [Feedback Management](feedback-provider.md)
-- [ ] [Notification Alert](notification.md)
+- [ ] [Authentication](/functional-requirements/authentication.md)
+- [ ] [Exam Paper Scanner](/functional-requirements/exam-paper-scanner.md)
+- [ ] [Result Processing](/functional-requirements/result-processor.md)
+- [ ] [Exam Analytics](/functional-requirements/exam-analytics.md)
+- [ ] [Feedback Management](/functional-requirements/feedback-provider.md)
+- [ ] [Notification Alert](/functional-requirements/notification.md)
 
 ---
 
