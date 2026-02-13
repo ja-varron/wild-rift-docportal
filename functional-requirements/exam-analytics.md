@@ -8,7 +8,7 @@
 
 ### 📑 Site Map
 
-- [ ] [Project Homepage](project-homepage.md)
+- [ ] [Project Homepage](/project-homepage.md)
 - [ ] [Authentication](/functional-requirements/authentication.md)
 - [ ] [Exam Paper Scanner](/functional-requirements/exam-paper-scanner.md)
 - [ ] [Result Processing](/functional-requirements/result-processor.md)
