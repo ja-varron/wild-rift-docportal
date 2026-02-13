@@ -106,30 +106,7 @@ New User
 | 9 | System displays success message |
 | 10 | User is redirected to Sign In page |
 
----
 
-## 9. Alternative Flows
 
-### A1 – Email Already Exists
-
-| Step | Condition | Action |
-|------|------------|--------|
-| 6A | Email found in database | Display "Email already exists" |
-
----
-
-### A2 – Password Mismatch
-
-| Step | Condition | Action |
-|------|------------|--------|
-| 5A | Password ≠ Confirm Password | Display "Passwords do not match" |
-
----
-
-### A3 – Weak Password
-
-| Step | Condition | Action |
-|------|------------|--------|
-| 5B | Password does not meet criteria | Display password strength requirement |
-
+© 2026 Hasa
 
