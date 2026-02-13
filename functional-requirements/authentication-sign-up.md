@@ -106,7 +106,7 @@ New User
 | 9 | System displays success message |
 | 10 | User is redirected to Sign In page |
 
-
+---
 
 © 2026 Hasa
 
