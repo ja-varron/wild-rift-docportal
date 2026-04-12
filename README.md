@@ -29,4 +29,7 @@ Explore the detailed specifications for each module below:
 - [🏠 Back to Project Homepage](./project-homepage.md)
 
 ---
+
+[Wild Rift GitHub Repository](https://github.com/ja-varron/wild-rift.git)
+
 *© 2026 Hasa*
